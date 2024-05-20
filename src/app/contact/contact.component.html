@@ -1,0 +1,23 @@
+
+<h1>Formulario con validacion</h1>
+
+
+<form [formGroup]="form" (ngSubmit)="submitForm()" style="display: flex; flex-direction: column; gap: 1rem;margin-top: 4px;">
+    <p-floatLabel style="width: 95%; align-self: center; margin-bottom: 20px;">
+      <input pInputText id="Name" formControlName="Name" [class.is-invalid]="isInvalid('Name')" placeholder="Escriba su Nombre" required style="width: 350px;" />
+      <label for="name">Nombre</label>
+    </p-floatLabel >
+    
+    <p-floatLabel style="width: 95%; align-self: center; margin-bottom: 20px;">
+      <input pInputText id="email" type="email" formControlName="email" [class.is-invalid]="isInvalid('email')" placeholder="Escriba su Correo Electrónico" required style="width: 350px;"/>
+      <label for="username">Correo Electónico</label>
+    </p-floatLabel>
+    
+    <p-floatLabel style="width: 95%; align-self: center; margin-bottom: 20px;">
+      <input pInputText type="message"  formControlName="message" [class.is-invalid]="isInvalid('password')" placeholder="message" required style="width: 350px;">
+      <label for="username">Mensaje</label>
+    </p-floatLabel>
+    
+    <button pButton type="submit" label="Enviar" style="width: 350px;" onclick="submitForm()"></button>
+   
+  </form>
